@@ -1,0 +1,42 @@
+#1
+name = input()
+print("Hello, " + name)
+
+#2
+city = input()
+time = input()
+print(f'Current location is {city} and time is {time}')
+
+#4
+a=int(input())
+b=int(input())
+c=input()
+d=True
+while c !="":
+    if int(c) not in range(a,b+1):
+        d = False
+    c=input()
+print(d)
+
+#4
+a=input()
+b=False
+if ("a" in a or "o" in a) and ("i" not in a and "e" not in a):
+    b = True
+print(b)
+
+#5
+num1,num2,num3 = int(input()),float(input()),int(input())
+res_a = str((f"{num3:0>16b}")[::-1])
+print(f"{num1:0=+10}\n{num2:#>10.2f}",
+      '_'.join(res_a[i:i+4] for i in range(0, len(res_a), 4))[::-1],
+      sep='\n')
+#6
+input_string = input()
+lower_string = input_string.lower()
+count_symbols = lower_string.count("!") + lower_string.count("%") + lower_string.count("#") + lower_string.count("@")
+replaced_string = lower_string.replace("!","").replace("%","").replace("#","").replace("@","")
+print("Количесвто замененных символов:",count_symbols)
+print("Преобразованная строка:",replaced_string)
+
+#7
