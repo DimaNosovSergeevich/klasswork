@@ -1,0 +1,31 @@
+#6 
+input_string = input()
+lower_string = input_string.lower()
+count_symbols = lower_string.count("!") + lower_string.count("%") + lower_string.count("#") + lower_string.count("@")
+replaced_string = lower_string.replace("!","").replace("%","").replace("#","").replace("@","")
+print(count_symbols)
+print(replaced_string)
+
+#7 
+input_string = input()
+lower_string = input_string.lower()
+count_symbols = lower_string.count("!") + lower_string.count("%") + lower_string.count("#") + lower_string.count("@")
+replaced_string = lower_string.replace("!","").replace("%","").replace("#","").replace("@","")
+print(count_symbols)
+print(replaced_string)
+
+#9
+import sys
+def get_unique_character(string):
+    unique_chars = set()
+    for char in string:
+        if char != '':
+            unique_chars.add(char.lower())
+    retur sorted(unique_chars)
+def main():
+    input_string = sys.stdin.readline().strip()
+    unique_characters = get_unique_characters(input_string)
+    output_string = ''.join(unique_characters)
+    print(output_string)
+if__name__=='__main__':
+    main()
