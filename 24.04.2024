@@ -1,0 +1,53 @@
+#7
+def power(a, n):
+    result = 1
+    for i in range(n):
+        result *= a
+    return result
+a = float(input("Введите основание a: "))
+n = int(input("Введите показатель степени n: "))
+if a > 0:
+    result = power(a, n)
+    print(f"{a} в степени {n} равно {result}")
+else:
+    print("Ошибка: основание должно быть больше 0")
+
+#8 
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+n = int(input("Введите натуральное число: "))
+if is_prime(n):
+    print(f"{n} - простое число")
+else:
+    print(f"{n} - не является простым числом")
+
+#9
+def serve_customers(n, z, s, k):
+    total_sales = 0
+    for i in range(k):
+        if s < z:
+            print(f"Покупатель {i+1}: Недостаточно средств для покупки товара")
+        else:
+            if n > 0:
+                change = s - z
+                if change >= 0:
+                    n -= 1
+                    total_sales += z
+                    print(f"Покупатель {i+1}: Купил товар за {z} рублей, сдача {change} рублей")
+                else:
+                    print(f"Покупатель {i+1}: Недостаточно средств для покупки товара")
+            else:
+                print(f"Покупатель {i+1}: Товар закончился")
+
+    print(f"Общая выручка: {total_sales} рублей")
+
+n = int(input("Введите максимальное количество единиц товара: "))
+z = int(input("Введите цену за одну единицу товара: "))
+s = int(input("Введите сумму у каждого покупателя: "))
+k = int(input("Введите количество покупателей в очереди: "))
